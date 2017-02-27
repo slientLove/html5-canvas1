@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>放射性渐变</title>
+	<script>
+		window.onload = function(){
+			var Canv = document.getElementById('canvas');
+			var oTxt = Canv.getContext('2d');
+
+				//	渐变始点坐标和半径，终点坐标和半径
+			var obj = oTxt.createRadialGradient(200,150,100,200,150,150);	
+
+				obj.addColorStop(0.2,'red');
+				obj.addColorStop(0.5,'orange');
+				obj.addColorStop(1,'green');
+
+				oTxt.fillStyle = obj;		//	将填充作为背景色
+				oTxt.fillRect(0,0,Canv.width,Canv.height);
+			
+		}
+	</script>
+</head>
+<body>
+		<canvas id="canvas" width="400" height="300"></canvas>
+</body>
+</html>

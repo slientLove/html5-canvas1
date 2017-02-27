@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>背景图</title>
+	<script>
+		window.onload = function(){
+			var Canv = document.getElementById('canvas');
+			var oTxt = Canv.getContext('2d');
+
+			var oImg = new Image();					//首先创建一个图片对象	
+			oImg.onload = function(){							
+				draw(this);
+			}
+			oImg.src = '7.jpg';
+			function draw(obj){
+				var bg = oTxt.createPattern(obj,'repeat');
+				oTxt.fillStyle = bg;				//	将图片作为背景色填充
+				oTxt.fillRect(0,0,300,300);			//	画出一个矩形
+			}
+		}n
+	</script>
+</head>
+<body>
+		<canvas id="canvas" width="400" height="300"></canvas>
+</body>
+</html>

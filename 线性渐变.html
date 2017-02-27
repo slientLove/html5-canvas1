@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>背景图</title>
+	<script>
+		window.onload = function(){
+			var Canv = document.getElementById('canvas');
+			var oTxt = Canv.getContext('2d');
+
+				//	渐变始点坐标，终点坐标
+			var obj = oTxt.createLinearGradient(100,100,300,300);	
+
+				obj.addColorStop(0.0002,'red');
+				obj.addColorStop(0.5,'orange');
+				obj.addColorStop(1,'green');
+
+				oTxt.fillStyle = obj;		//	将填充作为背景色
+				oTxt.fillRect(0,0,300,300);
+			
+		}
+	</script>
+</head>
+<body>
+		<canvas id="canvas" width="400" height="300"></canvas>
+</body>
+</html>
